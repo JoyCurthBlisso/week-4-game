@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+
+<!-- <link rel="stylesheet" type="text/css" href="assets/css/style.css"> -->
+
+
+	<head>
+	  <meta charset="UTF-8">
+	  <title>week-4-game</title>
+
+	  <h1>Crystals Collector! </h1>
+
+
+		
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+<!--  -->
+    
+
+
+	</head>
+
+	<body>
+		<div id = "instructions">
+		  <p>
+		  	You will be given a random number at the start of the game.
+
+		  </p>
+
+			<p>
+
+		  	There are four crystals below.  By clicking on a crystal you will add a specific amount of points to your total score.
+
+		  	</p>
+
+		  	<p>
+
+		  	You win the game by matching your total score to random number, you lose the game if your total score goes above the random number.
+
+			</p>
+
+			<p>
+		  	The value of each crystal is hidden from you until you click on it.
+
+			</p>
+
+			<p>
+
+		  	Each time when the game starts, the game will change the values of each crystal.
+
+		  	</p>
+		</div>
+		<br>
+
+		<div id="btns">
+			<img src="assets/images/bluecrystal.png" class = "btn" alt="bluecrystal" height ="75px" width = "75px">
+			<img src="assets/images/greencrystal.jpg" class = "btn" alt="greencrystal" height ="75px" width = "75px">
+			<img src="assets/images/orangecrystal.png" class = "btn" alt="orangecrystal" height ="75px" width = "75px">
+			<img src="assets/images/yellowcrystal.jpeg" class = "btn" alt="yellowcrystal" height ="75px" width = "75px">
+		</div>
+
+		<br>
+	
+		<div id="winsLosses">
+			<p id = "Wins">Wins</p>
+			<p id = "Losses">Losses</p>
+		</div>
+		
+		<br>
+
+		<div id="computerscore"></div>
+
+	  	<div id="totalScore"> Your total score is:</div>
+	  	
+	  	<br>
+
+	  	<div id="displayScore"></div>
+
+
+ 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     <!-- <script type="text/javascript" src="assets/javascript/game.js"></script> -->
+     <script type="text/javascript" >
+
+     var wins = 0;
+     var losses =0;
+     var totalUserNumber = 0;
+     var computerRandomNumber = 0;
+
+   
+    playgame();
+
+   
+    function playgame(){
+
+     	var minNumber = 19;
+		var maxNumber = 120;
+
+		function randomNumber(min,max)
+			{
+			    return Math.floor(Math.random()*(max-min+1)+min);
+			}
+
+		if (computerRandomNumber === 0){
+		computerRandomNumber = randomNumber(minNumber, maxNumber);
+		//REMOVE THIS LATER
+			console.log("computer random #:" + computerRandomNumber);
+		}
+    
+	     $(".btn").each(function(btnindex, btn)
+	     {
+			$(btn).data('value', randomNumber(1, 12));
+
+	     });
+ 	
+
+
+       	$(".btn").on("click", function () 
+       		{
+       			var btn = $(this);
+                var btnValue = btn.data('value');
+				console.log(btnValue + "btnvalue");	
+
+				//when a user clicks on a button add it to the total user value
+				totalUserNumber = totalUserNumber + btnValue;
+				console.log( "totalusernumber" + totalUserNumber);
+
+				if (totalUserNumber = computerRandomNumber){
+
+					wins ++ ;
+					// var winstext = document.getElementById("wins");
+				    // document.getElementById("wins").innerHTML = 
+				    // "Wins: " + wins;
+					
+					playgame();
+				}
+				// //if the value is equal to the computer random number increase wins by 1 and start over
+
+				else (totalUserNumber > computerRandomNumber){
+
+				// // 	losses ++;
+				// // 	var lossestext = document.getElementById("losses");
+				// // 	document.getElementById("losses").innerHTML = 
+				// // 	"Losses: " + losses;					
+
+					playgame();
+
+				}
+
+				else (totaUserNumber < userRandomNumber){
+
+
+                }
+
+    //             //not sure if we need the below
+    //             // var isInteger = !isNaN(parseInt(btnValue));
+
+
+
+     		});
+     };
+
+   
+   
+   </script>
+
+  </body>
+
+ 
+	
+
+</html>
