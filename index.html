@@ -10,12 +10,8 @@
 	  <title>week-4-game</title>
 
 	  <h1>Crystals Collector! </h1>
-
-
 		
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-<!--  -->
-    
+  	<link rel="stylesheet" type="text/css" href="assets/css/style.css">    
 
 
 	</head>
@@ -54,110 +50,202 @@
 
 		<div id="btns">
 			<img src="assets/images/bluecrystal.png" class = "btn" alt="bluecrystal" height ="75px" width = "75px">
+			<!-- //CHANgGE IT TO GREEN EMERALD IMAGE -->
 			<img src="assets/images/greencrystal.jpg" class = "btn" alt="greencrystal" height ="75px" width = "75px">
 			<img src="assets/images/orangecrystal.png" class = "btn" alt="orangecrystal" height ="75px" width = "75px">
 			<img src="assets/images/yellowcrystal.jpeg" class = "btn" alt="yellowcrystal" height ="75px" width = "75px">
 		</div>
 
 		<br>
-	
-		<div id="winsLosses">
-			<p id = "Wins">Wins</p>
-			<p id = "Losses">Losses</p>
+
+		<div>
+			<div id="computerScore"><span class='value'></span></div>
+			<br>
+		
+			<div id="winsLosses">
+				<p id = "Wins">Wins <span class='value'></span></p>
+				<p id = "Losses">Losses <span class='value'></span></p>
+			</div>
 		</div>
 		
 		<br>
 
-		<div id="computerscore"></div>
 
-	  	<div id="totalScore"> Your total score is:</div>
+	  	<div id="totalScore"> Your total score is:<span class='value'></span></div>
 	  	
 	  	<br>
 
-	  	<div id="displayScore"></div>
+	  	<div id="displayScore"><span class='value'></span></div>
 
 
- 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
      <!-- <script type="text/javascript" src="assets/javascript/game.js"></script> -->
      <script type="text/javascript" >
+
+
+    // function newgame(){
+
 
      var wins = 0;
      var losses =0;
      var totalUserNumber = 0;
      var computerRandomNumber = 0;
-
+    
    
-    playgame();
+    newgame();
 
-   
-    function playgame(){
+     	// var
 
-     	var minNumber = 19;
-		var maxNumber = 120;
+		// $(".displayScore .value").html(totalUserNumber);
 
-		function randomNumber(min,max)
+		function newgame()
+		{
+
+			var minNumber = 19;
+			var maxNumber = 120;
+			var resetText = "yes";
+
+			function setUserNumberText()
 			{
-			    return Math.floor(Math.random()*(max-min+1)+min);
+				if (resetText = "yes")
+				{
+					totalUserNumber = 0;
+				}
+				var totalUserNumberText = document.getElementById("displayScore");
+				document.getElementById("displayScore").innerHTML =  totalUserNumber;
+				console.log("setuserText" + totalUserNumber);
 			}
 
-		if (computerRandomNumber === 0){
-		computerRandomNumber = randomNumber(minNumber, maxNumber);
-		//REMOVE THIS LATER
-			console.log("computer random #:" + computerRandomNumber);
-		}
-    
-	     $(".btn").each(function(btnindex, btn)
-	     {
-			$(btn).data('value', randomNumber(1, 12));
+			setUserNumberText();
 
-	     });
- 	
+			function randomNumber(min,max)
+				{
+				    return Math.floor(Math.random()*(max-min+1)+min);
+				}
+
+			// function computuerRandNumber()
+			// {
+				if (computerRandomNumber === 0 || reset === 0){
+					computerRandomNumber = randomNumber(minNumber, maxNumber);
+					//REMOVE THIS LATER
+						console.log("computer random #:" + computerRandomNumber);
+					}
+			// }
+
+			// computerRandomNumber();
+
+				
+			function setComputerRandomText()
+				{
+					// if (reset = "yes")
+					// {	
+					// computerRandomNumber = randomNumber(minNumber, maxNumber);
+					// }
+				
+
+				var computerRandomNumberText = document.getElementById("computerScore");
+				document.getElementById("computerScore").innerHTML =  computerRandomNumber;
+			    }
+
+			 setComputerRandomText(computerRandomNumber);
+
+			 function setButtonNumber()
+			 	{
+
+			     $(".btn").each(function(btnindex, btn)
+				     {
+						$(btn).data('value', randomNumber(1, 12));
+
+				     });
+			 	}
+
+			 setButtonNumber();
+			}
 
 
        	$(".btn").on("click", function () 
        		{
        			var btn = $(this);
                 var btnValue = btn.data('value');
-				console.log(btnValue + "btnvalue");	
 
-				//when a user clicks on a button add it to the total user value
+				console.log(btnValue + "btnvalueclicked");	
+				console.log("computer random number" + computerRandomNumber);
+
 				totalUserNumber = totalUserNumber + btnValue;
 				console.log( "totalusernumber" + totalUserNumber);
+				console.log("onclick")
 
-				if (totalUserNumber = computerRandomNumber){
+				totalUserNumberText = document.getElementById("displayScore");
+				document.getElementById("displayScore").innerHTML =  totalUserNumber;
+				console.log(totalUserNumber);
 
-					wins ++ ;
-					// var winstext = document.getElementById("wins");
-				    // document.getElementById("wins").innerHTML = 
-				    // "Wins: " + wins;
-					
-					playgame();
-				}
-				// //if the value is equal to the computer random number increase wins by 1 and start over
-
-				else (totalUserNumber > computerRandomNumber){
-
-				// // 	losses ++;
-				// // 	var lossestext = document.getElementById("losses");
-				// // 	document.getElementById("losses").innerHTML = 
-				// // 	"Losses: " + losses;					
-
-					playgame();
-
-				}
-
-				else (totaUserNumber < userRandomNumber){
-
-
-                }
-
-    //             //not sure if we need the below
-    //             // var isInteger = !isNaN(parseInt(btnValue));
-
-
+				checkscore (totalUserNumber,computerRandomNumber);
 
      		});
-     };
+
+				
+			function checkscore(totalUserNumber,computerRandomNumber)
+				{
+
+					if (totalUserNumber != 0){
+
+						if (totalUserNumber > computerRandomNumber){
+
+								losses ++;
+						// 		 // $(".Losses .value").html(losses);
+								var lossestext = document.getElementById("losses");
+								document.getElementById("Losses").innerHTML = 
+								"Losses: " + losses;
+
+								resetText = "yes";
+
+								setComputerRandomText();
+								setButtonNumber();
+								setUserNumberText();
+
+								newgame();
+
+
+								console.log("losses");
+
+
+
+						}
+
+						if (totalUserNumber === computerRandomNumber)
+						{
+							wins ++;
+							var winstext = document.getElementById("wins");
+					    	document.getElementById("Wins").innerHTML = 
+					    	"Wins: " + wins;
+
+					    	
+
+					    	setComputerRandomText();
+							setButtonNumber();
+							setUserNumberText();
+
+							newgame();
+
+
+						}
+					
+					// // 	 // $(".Wins .value").html(wins);
+					// // 	
+
+					// //     reset = "yes";
+
+					// //     setComputerRandomText();
+					// //     setButtonNumber();
+					// // 	setUserNumberText();
+
+					// }
+					}	
+
+				}
+
+               
+		// }
 
    
    

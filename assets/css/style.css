@@ -6,7 +6,6 @@
   text-align: center;
 }
 
-
 /*//ADD HORRIBLE BACKGROUND IMAGE*/
 
 
@@ -54,7 +53,8 @@ h1 {
 	background-color: #f7e7d0;
 	border: 5px;
 	color: #a7ce87;
-	/*Make green more like green in example*/
+	font-style: 	bold;
+
 	
 }
 
@@ -63,8 +63,9 @@ h1 {
 {
 	display: block;
 	border: 5px;
-	margin-left: auto;
-	/*move images to left align*/
+	margin-left: left;
+	text-align: left;
+	padding: 5px;
 	/*put each button in a box with a little border and white background*/
   
 }
@@ -73,40 +74,49 @@ h1 {
 #winsLosses
 {
 	
-	background-color: blue;
+	background-color: #86f9fc;
 	padding: 25px;
 	width: 100px;
 	height: 150px;
-	color: white;
+	color: #726a81;
+	text-align: left;
   
 }
 
-#computerscore{
+#computerScore{
 
 	background-color: #7bc587;
+	width: 210px;
+	height: 150px;
+	padding: 10px;
+	text-align: left;
+
 }
 
 
 #totalScore
 {
 
-	background-color: teal;
-	height: 100px;
+	background-color: #54a096;
+	height: 50px;
 	border: 20px;
-	width: 150px;
+	width: 215px;
 	color: white;
-	padding: 25px;
+	padding: 5px;
+	text-align: left;
+
 	
 
 }
 
 #displayScore{
-	background-color: teal;
+	background-color: #54a096;
+	font-style: large;
 	height: 150px;
-	width: 150px;
-	border: 20px;
+	width: 215px;
+	border-top: : 5px;
+	text-align: left;
 	color: white;
-	margin-top: 20px;
 	margin-top-color: white;
 
 }
