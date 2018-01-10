@@ -83,8 +83,6 @@
      <script type="text/javascript" >
 
 
-    // function newgame(){
-
 
      var wins = 0;
      var losses =0;
@@ -104,6 +102,10 @@
 			var minNumber = 19;
 			var maxNumber = 120;
 			var resetText = "yes";
+
+			if (computerRandomNumber =! 0){
+				computerRandomNumber = 0;
+			}
 
 			function setUserNumberText()
 			{
@@ -135,8 +137,8 @@
 			// computerRandomNumber();
 
 				
-			function setComputerRandomText()
-				{
+			// function setComputerRandomText()
+			// 	{
 					// if (reset = "yes")
 					// {	
 					// computerRandomNumber = randomNumber(minNumber, maxNumber);
@@ -145,9 +147,9 @@
 
 				var computerRandomNumberText = document.getElementById("computerScore");
 				document.getElementById("computerScore").innerHTML =  computerRandomNumber;
-			    }
+			    // }
 
-			 setComputerRandomText(computerRandomNumber);
+			 // setComputerRandomText(computerRandomNumber);
 
 			 function setButtonNumber()
 			 	{
@@ -199,9 +201,9 @@
 
 								resetText = "yes";
 
-								setComputerRandomText();
-								setButtonNumber();
-								setUserNumberText();
+								// setComputerRandomText();
+								// setButtonNumber();
+								// setUserNumberText();
 
 								newgame();
 
@@ -219,11 +221,15 @@
 					    	document.getElementById("Wins").innerHTML = 
 					    	"Wins: " + wins;
 
+					    	// computerRandomNumber = randomNumber(minNumber, maxNumber);
 					    	
+							// var computerRandomNumberText = document.getElementById("computerScore");
+							// document.getElementById("computerScore").innerHTML =  computerRandomNumber;
 
-					    	setComputerRandomText();
-							setButtonNumber();
-							setUserNumberText();
+
+					    	// setComputerRandomText();
+							// setButtonNumber();
+							// setUserNumberText();
 
 							newgame();
 
@@ -245,8 +251,7 @@
 				}
 
                
-		// }
-
+		
    
    
    </script>
