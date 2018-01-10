@@ -58,7 +58,7 @@
 
 		<br>
 
-		<div>
+		<!-- <div> -->
 			<div id="computerScore"><span class='value'></span></div>
 			<br>
 		
@@ -66,7 +66,7 @@
 				<p id = "Wins">Wins <span class='value'></span></p>
 				<p id = "Losses">Losses <span class='value'></span></p>
 			</div>
-		</div>
+		<!-- </div> -->
 		
 		<br>
 
@@ -76,189 +76,20 @@
 	  	<br>
 
 	  	<div id="displayScore"><span class='value'></span></div>
-
-
- 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-     <!-- <script type="text/javascript" src="assets/javascript/game.js"></script> -->
-     <script type="text/javascript" >
-
-
-
-     var wins = 0;
-     var losses =0;
-     var totalUserNumber = 0;
-     var computerRandomNumber = 0;
-    
-   
-    newgame();
-
-     	// var
-
-		// $(".displayScore .value").html(totalUserNumber);
-
-		function newgame()
-		{
-
-			var minNumber = 19;
-			var maxNumber = 120;
-			var resetText = "yes";
-
-			if (computerRandomNumber =! 0){
-				computerRandomNumber = 0;
-			}
-
-			function setUserNumberText()
-			{
-				if (resetText = "yes")
-				{
-					totalUserNumber = 0;
-				}
-				var totalUserNumberText = document.getElementById("displayScore");
-				document.getElementById("displayScore").innerHTML =  totalUserNumber;
-				console.log("setuserText" + totalUserNumber);
-			}
-
-			setUserNumberText();
-
-			function randomNumber(min,max)
-				{
-				    return Math.floor(Math.random()*(max-min+1)+min);
-				}
-
-			// function computuerRandNumber()
-			// {
-				if (computerRandomNumber === 0 || reset === 0){
-					computerRandomNumber = randomNumber(minNumber, maxNumber);
-					//REMOVE THIS LATER
-						console.log("computer random #:" + computerRandomNumber);
-					}
-			// }
-
-			// computerRandomNumber();
-
-				
-			// function setComputerRandomText()
-			// 	{
-					// if (reset = "yes")
-					// {	
-					// computerRandomNumber = randomNumber(minNumber, maxNumber);
-					// }
-				
-
-				var computerRandomNumberText = document.getElementById("computerScore");
-				document.getElementById("computerScore").innerHTML =  computerRandomNumber;
-			    // }
-
-			 // setComputerRandomText(computerRandomNumber);
-
-			 function setButtonNumber()
-			 	{
-
-			     $(".btn").each(function(btnindex, btn)
-				     {
-						$(btn).data('value', randomNumber(1, 12));
-
-				     });
-			 	}
-
-			 setButtonNumber();
-			}
-
-
-       	$(".btn").on("click", function () 
-       		{
-       			var btn = $(this);
-                var btnValue = btn.data('value');
-
-				console.log(btnValue + "btnvalueclicked");	
-				console.log("computer random number" + computerRandomNumber);
-
-				totalUserNumber = totalUserNumber + btnValue;
-				console.log( "totalusernumber" + totalUserNumber);
-				console.log("onclick")
-
-				totalUserNumberText = document.getElementById("displayScore");
-				document.getElementById("displayScore").innerHTML =  totalUserNumber;
-				console.log(totalUserNumber);
-
-				checkscore (totalUserNumber,computerRandomNumber);
-
-     		});
-
-				
-			function checkscore(totalUserNumber,computerRandomNumber)
-				{
-
-					if (totalUserNumber != 0){
-
-						if (totalUserNumber > computerRandomNumber){
-
-								losses ++;
-						// 		 // $(".Losses .value").html(losses);
-								var lossestext = document.getElementById("losses");
-								document.getElementById("Losses").innerHTML = 
-								"Losses: " + losses;
-
-								resetText = "yes";
-
-								// setComputerRandomText();
-								// setButtonNumber();
-								// setUserNumberText();
-
-								newgame();
-
-
-								console.log("losses");
-
-
-
-						}
-
-						if (totalUserNumber === computerRandomNumber)
-						{
-							wins ++;
-							var winstext = document.getElementById("wins");
-					    	document.getElementById("Wins").innerHTML = 
-					    	"Wins: " + wins;
-
-					    	// computerRandomNumber = randomNumber(minNumber, maxNumber);
-					    	
-							// var computerRandomNumberText = document.getElementById("computerScore");
-							// document.getElementById("computerScore").innerHTML =  computerRandomNumber;
-
-
-					    	// setComputerRandomText();
-							// setButtonNumber();
-							// setUserNumberText();
-
-							newgame();
-
-
-						}
-					
-					// // 	 // $(".Wins .value").html(wins);
-					// // 	
-
-					// //     reset = "yes";
-
-					// //     setComputerRandomText();
-					// //     setButtonNumber();
-					// // 	setUserNumberText();
-
-					// }
-					}	
-
-				}
-
-               
 		
-   
-   
-   </script>
 
   </body>
 
- 
+ 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="assets/javascript/game.js"></script>
+
+     <!-- <script type="text/javascript" > -->
+
+
+
+<!--                
+		
+	</script> -->
 	
 
 </html>
