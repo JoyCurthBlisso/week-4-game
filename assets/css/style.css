@@ -3,15 +3,12 @@
 
 * {
   box-sizing: border-box;
-  text-align: center;
+ 
 }
-
-/*//ADD HORRIBLE BACKGROUND IMAGE*/
 
 
 header {
   padding: 30px;
-
   color: white;
   background: #ffffff;
   border: #cccccc; 
@@ -26,9 +23,6 @@ header {
   
 }
 
-body {
-	background-image: src:"assets/images/background.jpeg";
-}
 
 h1 {
   font-size: 24px;
@@ -36,16 +30,9 @@ h1 {
   background-color: peru; 
   width: 30%;
   height: 75px
-  /*add some space above text*/
- 
+
 }
 
-
-/*h2 {
-  font-size: 24px;
-  font-family: 'Georgia', Times, Times New Roman, serif;
-  color: #65a8a4; 
-}*/
 
 #instructions
 {
@@ -55,9 +42,7 @@ h1 {
 	background-color: #f7e7d0;
 	border: 5px;
 	color: #a7ce87;
-	font-style: 	bold;
-
-	
+	font-style: bold;
 }
 
 
@@ -68,7 +53,6 @@ h1 {
 	margin-left: left;
 	text-align: left;
 	padding: 5px;
-	/*put each button in a box with a little border and white background*/
   
 }
 
@@ -82,6 +66,7 @@ h1 {
 	height: 150px;
 	color: #726a81;
 	text-align: left;
+	display: inline-block;
   
 }
 
@@ -92,6 +77,7 @@ h1 {
 	height: 150px;
 	padding: 10px;
 	text-align: left;
+	display: inline-block;
 
 }
 

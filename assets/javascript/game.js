@@ -73,10 +73,11 @@
 						if (totalUserNumber > computerRandomNumber){
 
 								losses ++;
-								 // $(".Losses .value").html(losses);
 								var lossestext = document.getElementById("losses");
 								document.getElementById("Losses").innerHTML = 
 								"Losses: " + losses;
+
+								// $("#losses").html("Losses: " + losses);
 
 
 								newgame();
