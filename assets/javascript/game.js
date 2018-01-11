@@ -1,16 +1,10 @@
-
-
-
-     var wins = 0;
+	 var wins = 0;
      var losses =0;
      var totaUserNumber;
      var computerRandomNumber
     
    
     newgame();
-
-    
-		// $(".displayScore .value").html(totalUserNumber);
 
 		function newgame()
 		{
@@ -26,7 +20,7 @@
 				
 				var totalUserNumberText = document.getElementById("displayScore");
 				document.getElementById("displayScore").innerHTML =  totalUserNumber;
-				console.log("setuserText" + totalUserNumber);
+				
 			}
 
 			setUserNumberText();
@@ -37,9 +31,7 @@
 				}
 
 					computerRandomNumber = randomNumber(minNumber, maxNumber);
-					//REMOVE THIS LATER
-					console.log("computer random #:" + computerRandomNumber);
-				
+					
 				
 				var computerRandomNumberText = document.getElementById("computerScore");
 				document.getElementById("computerScore").innerHTML =  computerRandomNumber;
@@ -65,15 +57,11 @@
                 var btnValue = btn.data('value');
 
 				console.log(btnValue + "btnvalueclicked");	
-				console.log("computer random number" + computerRandomNumber);
 
 				totalUserNumber = totalUserNumber + btnValue;
-				console.log( "totalusernumber" + totalUserNumber);
-				console.log("onclick")
 
 				totalUserNumberText = document.getElementById("displayScore");
 				document.getElementById("displayScore").innerHTML =  totalUserNumber;
-				console.log(totalUserNumber);
 
 				checkscore(totalUserNumber,computerRandomNumber);
 
@@ -96,11 +84,6 @@
 
 								newgame();
 
-
-								console.log("losses");
-
-
-
 						}
 
 						if (totalUserNumber === computerRandomNumber)
@@ -110,12 +93,11 @@
 					    	document.getElementById("Wins").innerHTML = 
 					    	"Wins: " + wins;
 
-					  
 
 							newgame();
 
 
 						}
-									}	
+					}	
 
 				}
