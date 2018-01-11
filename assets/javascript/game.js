@@ -1,7 +1,6 @@
 	 $(document).ready(function()
 	{
-
-
+		
 	 var wins = 0;
      var losses =0;
      var totaUserNumber;
@@ -33,18 +32,18 @@
 				    return Math.floor(Math.random()*(max-min+1)+min);
 			}
 
-				computerRandomNumber = randomNumber(minNumber, maxNumber);	
-				$("#computerScore").html(computerRandomNumber);
+			computerRandomNumber = randomNumber(minNumber, maxNumber);	
+			$("#computerScore").html(computerRandomNumber);
 		
-			 function setButtonNumber()
-			 {
+			function setButtonNumber()
+			{
 
-			     $(".btn").each(function(btnindex, btn)
+			    $(".btn").each(function(btnindex, btn)
 				     {
 						$(btn).data('value', randomNumber(1, 12));
 
 				     });
-			 }
+			}
 
 			 setButtonNumber();
 		}
@@ -54,8 +53,6 @@
        		{
        			var btn = $(this);
                 var btnValue = btn.data('value');
-
-				
 
 				totalUserNumber = totalUserNumber + btnValue;
 				$("#displayScore").html(totalUserNumber);
