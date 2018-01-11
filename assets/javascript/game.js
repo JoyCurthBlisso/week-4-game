@@ -33,13 +33,9 @@
 				    return Math.floor(Math.random()*(max-min+1)+min);
 			}
 
-					computerRandomNumber = randomNumber(minNumber, maxNumber);
-					
-				
-				var computerRandomNumberText = document.getElementById("computerScore");
-				document.getElementById("computerScore").innerHTML =  computerRandomNumber;
-				
-
+				computerRandomNumber = randomNumber(minNumber, maxNumber);	
+				$("#computerScore").html(computerRandomNumber);
+		
 			 function setButtonNumber()
 			 {
 
@@ -62,10 +58,8 @@
 				
 
 				totalUserNumber = totalUserNumber + btnValue;
-
-				totalUserNumberText = document.getElementById("displayScore");
-				document.getElementById("displayScore").innerHTML =  totalUserNumber;
-
+				$("#displayScore").html(totalUserNumber);
+			
 				checkscore(totalUserNumber,computerRandomNumber);
 
      		});
