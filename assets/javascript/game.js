@@ -1,6 +1,6 @@
 	 $(document).ready(function()
 	{
-		
+
 	 var wins = 0;
      var losses =0;
      var totaUserNumber;
@@ -70,11 +70,7 @@
 						if (totalUserNumber > computerRandomNumber){
 
 								losses ++;
-								var lossestext = document.getElementById("losses");
-								document.getElementById("Losses").innerHTML = 
-								"Losses: " + losses;
-
-								// $("#losses").html(losses);
+								$("#Losses").html("Losses " + losses);
 
 
 								newgame();
@@ -84,11 +80,8 @@
 						if (totalUserNumber === computerRandomNumber)
 						{
 							wins ++;
-							var winstext = document.getElementById("wins");
-					    	document.getElementById("Wins").innerHTML = 
-					    	"Wins: " + wins;
-
-
+							$("#Wins").html("Wins " + wins);
+							
 							newgame();
 
 
